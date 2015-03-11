@@ -82,6 +82,19 @@ class AdminLtePluginsGenerator < Rails::Generators::Base
     plugin_directory = File.expand_path('../templates', __FILE__) + '/datepicker'
     directory "#{plugin_directory}/locales", 'vendor/assets/javascripts/locales'
   end
+  
+  def install_icheck
+    add_plugin('iCheck', 'js', 'icheck.min')
+    add_plugin('iCheck', 'css', 'all')
+    
+    plugin_directory = File.expand_path('../templates', __FILE__) + '/iCheck'
+    directory "#{plugin_directory}/flat", "vendor/assets/stylesheets/flat"
+    directory "#{plugin_directory}/futurico", "vendor/assets/stylesheets/futurico"
+    directory "#{plugin_directory}/line", "vendor/assets/stylesheets/line"
+    directory "#{plugin_directory}/minimal", "vendor/assets/stylesheets/minimal"
+    directory "#{plugin_directory}/polaris", "vendor/assets/stylesheets/polaris"
+    directory "#{plugin_directory}/square", "vendor/assets/stylesheets/square"
+  end
 
   # ------------------------------ #
 
