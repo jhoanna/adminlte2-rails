@@ -83,6 +83,15 @@ class AdminLtePluginsGenerator < Rails::Generators::Base
     directory "#{plugin_directory}/locales", 'vendor/assets/javascripts/locales'
   end
   
+  def install_datatables
+    add_plugin('datatables', 'js', 'jquery.dataTables')
+    add_plugin('datatables', 'js', 'dataTables.bootstrap')
+    add_plugin('datatables', 'css', 'dataTables.bootstrap')
+    
+    plugin_directory = File.expand_path('../templates', __FILE__) + '/datatables'
+    directory "#{plugin_directory}/images", 'vendor/assets/javascripts/images'
+  end
+  
   def install_icheck
     add_plugin('iCheck', 'js', 'icheck.min')
     add_plugin('iCheck', 'css', 'all')
